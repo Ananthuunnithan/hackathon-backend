@@ -16,6 +16,24 @@ mongoose.connect("mongodb://ananthu:Ananthu2003@ac-bwtfq7g-shard-00-00.g033s7s.m
     }
 )
 
+const Hackathonentry=mongoose.model("Hackathonentry",new mongoose.Schema(
+    {
+        teamId: String,
+        teamName: String,
+        teamLeaderName: String,
+        leaderEmail: String,
+        leaderPhone: String,
+        collegeName: String,
+        numberOfMembers: String,
+        projectTitle: String,
+        problemStatement: String,
+        techStack: String,
+        mentorName: String,
+        regDate: String,
+        table: String
+    }
+))
+
 app.listen(3000,(request,response)=>{
     console.log("Server Connected")
 })

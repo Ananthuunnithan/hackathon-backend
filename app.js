@@ -39,6 +39,11 @@ app.get("/view",async(request,response)=>{
     response.json(Hackentry)
 })
 
+app.post("/add-entry",async(request,response)=>{
+    await Hackathonentry.create(request.body)
+    response.json({"status":"Entry added successfully"})
+})
+
 app.listen(3000,(request,response)=>{
     console.log("Server Connected")
 })

@@ -34,6 +34,11 @@ const Hackathonentry=mongoose.model("Hackathonentry",new mongoose.Schema(
     }
 ))
 
+app.get("/view",async(request,response)=>{
+    const Hackentry=await Hackathonentry.find()
+    response.json(Hackentry)
+})
+
 app.listen(3000,(request,response)=>{
     console.log("Server Connected")
 })
